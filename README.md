@@ -2,7 +2,19 @@
     <img src="https://user-images.githubusercontent.com/18244518/120987722-d49e8300-c7b8-11eb-9d13-f5c92804dae2.png" alt="banner">
 </div>
 
-It's a music game of the [TJA file](https://wikiwiki.jp/jiro/%E5%A4%AA%E9%BC%93%E3%81%95%E3%82%93%E6%AC%A1%E9%83%8E#h2_content_1_8) used by Taiko Jiro on 3DS.
+A graphically updated verion of Togetg's TJAPlayer for 3DS, meant to run the [TJA files](https://wikiwiki.jp/jiro/%E5%A4%AA%E9%BC%93%E3%81%95%E3%82%93%E6%AC%A1%E9%83%8E#h2_content_1_8) used in Taiko games.
+
+# Updated Graphics
+
+In game screens now have backgrounds. 
+
+Some in game elements are updated.
+
+The app icon has been updated to be similar to other Taiko games.
+
+Misc. Changes
+
+# Below is the original README of the project. This contains intructions on how to add songs and how to build the game.
 
 # Usage
 
