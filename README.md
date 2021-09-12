@@ -14,6 +14,8 @@ The app icon has been updated to be similar to other Taiko games.
 
 Misc. Changes
 
+<img src="https://github.com/hollow-08/BetterTJAPlayer_for_3DS/blob/850a158dca40dc5d2bcca0d18e4c3cab6a078b41/Screenshot_4.png">
+
 # Below is the original README of the project. This contains intructions on how to add songs and how to build the game.
 
 # Usage
