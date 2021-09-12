@@ -8,7 +8,7 @@ A graphically updated verion of Togetg's TJAPlayer for 3DS, meant to run the [TJ
 
 In game screens now have backgrounds. 
 
-Some in game elements are updated.
+Some in game elements are updated, with some being changed into English.
 
 The app icon has been updated to be similar to other Taiko games.
 
