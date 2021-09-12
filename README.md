@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/18244518/120987722-d49e8300-c7b8-11eb-9d13-f5c92804dae2.png" alt="banner">
+    <img src="https://github.com/hollow-08/BetterTJAPlayer_for_3DS/blob/e553f9f32df6c559cd130c0407e1b9130254a70f/resource/banner.png" alt="banner">
 </div>
 
 A graphically updated verion of Togetg's TJAPlayer for 3DS, meant to run the [TJA files](https://wikiwiki.jp/jiro/%E5%A4%AA%E9%BC%93%E3%81%95%E3%82%93%E6%AC%A1%E9%83%8E#h2_content_1_8) used in Taiko games.
