@@ -125,9 +125,9 @@ const char Text[3][64][128] = {
 
 typedef struct {
 
-	int lang,buffer_size;
-	bool isAuto, isStelth,isSwap,dispFps;
-	double speed, random,offset,
+	int lang, buffer_size;
+	bool isAuto, isSound, isStelth, isSwap, dispFps;
+	double speed, random, offset,
 		judge_range_perfect,judge_range_nice,judge_range_bad;
 	int KEY_A, KEY_B, KEY_DRIGHT, KEY_DLEFT, KEY_DUP, KEY_DDOWN, KEY_R, KEY_L, KEY_X, KEY_Y,
 		KEY_ZL, KEY_ZR, KEY_CSTICK_RIGHT, KEY_CSTICK_LEFT, KEY_CSTICK_UP, KEY_CSTICK_DOWN,
