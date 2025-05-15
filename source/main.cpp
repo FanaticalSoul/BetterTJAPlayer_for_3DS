@@ -291,12 +291,11 @@ int main() {
 
 				button_game(&isDon, &isKatsu, Option, key);
 			}
-			/*/ TF //
+
 			if (Option.isSound) {
 				if (isDon == true)   play_sound(SOUND_DON);			// Don
 				if (isKatsu == true) play_sound(SOUND_KATSU);		// Katsu
 			}
-			// TF /*/
 
 			if (key & KEY_SELECT || key & KEY_START) {
 				togglePlayback();
@@ -346,9 +345,11 @@ int main() {
 					toggle_time(0);
 					toggle_time(1);
 					isPause = !isPause;
-					/*/ TR //
-					play_sound(SOUND_DON);
-					// TR /*/
+					//*/ TF //
+					if (Option.isSound) {
+						play_sound(SOUND_DON);
+					}
+					// TF /*/
 				}
 			}
 			if (get_notes_finish() == true && ndspChnIsPlaying(CHANNEL) == false) {
