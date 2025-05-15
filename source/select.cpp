@@ -58,7 +58,6 @@ void load_genre_file(int id) {
 	Genre[id].font_color = 0xffffff;
 
 	if (json != NULL) {
-
 		Genre[id].isOpened = false;
 		strlcpy(Genre[id].name, json_string_value(json_object_get(json, "GenreName")), sizeof(Genre[id].name));
 		strlcpy(tmp, json_string_value(json_object_get(json, "GenreColor")), sizeof(tmp));
@@ -68,7 +67,8 @@ void load_genre_file(int id) {
 		if (tmp[0] == '#') tmp[0] = ' ';
 		Genre[id].font_color = strtol(tmp, NULL, 16);
 	}
-	if (json == NULL) {	//開けなかった時
+	if (json == NULL) {
+		// if file couldn't be opened
 	}
 
 	json_decref(json);
