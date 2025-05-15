@@ -509,20 +509,27 @@ void notes_judge(double CurrentTimeNotes, bool isDon, bool isKatsu, int cnt) {
 
 				if (Notes[i].knd == NOTES_DON ||
 					Notes[i].knd == NOTES_POTATO) {
-
+					/*/ TR // ( Test Removal )
 					play_sound(SOUND_DON);
+					// TR /*/
 					make_judge(PERFECT, CurrentTimeNotes);
 				}
 				else if (Notes[i].knd == NOTES_BIGDON) {
+					/*/ TR //
 					play_sound(SOUND_DON);
+					// TR /*/
 					make_judge(SPECIAL_PERFECT, CurrentTimeNotes);
 				}
 				else if (Notes[i].knd == NOTES_KATSU) {
+					/*/ TR //
 					play_sound(SOUND_KATSU);
+					// TR /*/
 					make_judge(PERFECT, CurrentTimeNotes);
 				}
 				else if (Notes[i].knd == NOTES_BIGKATSU) {
+					/*/ TR //
 					play_sound(SOUND_KATSU);
+					// TR /*/
 					make_judge(SPECIAL_PERFECT, CurrentTimeNotes);
 				}
 
@@ -539,16 +546,18 @@ void notes_judge(double CurrentTimeNotes, bool isDon, bool isKatsu, int cnt) {
 
 				if (JudgeRollState == NOTES_ROLL) update_score(ROLL);
 				else if (JudgeRollState == NOTES_BIGROLL) update_score(BIG_ROLL);
-
+				/*/ TR //
 				play_sound(SOUND_DON);
+				// TR /*/
 			}
 		}
 
 		if (JudgeBalloonState != -1) {	//風船
 
 			if (cnt % AUTO_ROLL_FRAME == 0) {
-
+				/*/ TR //
 				play_sound(SOUND_DON);
+				// TR /*/
 				BalloonNotes[JudgeBalloonState].current_hit++;
 
 				if (BalloonNotes[JudgeBalloonState].current_hit >= BalloonNotes[JudgeBalloonState].need_hit) {
@@ -661,8 +670,9 @@ void notes_judge(double CurrentTimeNotes, bool isDon, bool isKatsu, int cnt) {
 
 		if (BalloonNotes[JudgeBalloonState].end_id != -1) delete_notes(BalloonNotes[JudgeBalloonState].end_id);
 		else delete_notes(BalloonNotes[JudgeBalloonState].start_id);
-
+		/*/ TR // ( Test Removal )
 		play_sound(SOUND_BALLOONBREAK);
+		// TR /*/
 		update_balloon_count(0);
 	}
 }
@@ -757,8 +767,10 @@ void notes_calc(bool isDon, bool isKatsu, double bpm, double CurrentTimeNotes, i
 				else {	//オート時はスルーでも良判定に
 					if (Notes[i].knd == NOTES_DON || Notes[i].knd == NOTES_KATSU) update_score(PERFECT);
 					else if (Notes[i].knd == NOTES_BIGDON || Notes[i].knd == NOTES_BIGKATSU) update_score(SPECIAL_PERFECT);
+					/*/ TR // ( Test Removal )
 					if (Notes[i].knd == NOTES_DON || Notes[i].knd == NOTES_BIGDON) play_sound(SOUND_DON);
 					if (Notes[i].knd == NOTES_KATSU || Notes[i].knd == NOTES_BIGKATSU) play_sound(SOUND_KATSU);
+					// TR /*/
 				}
 			}
 			delete_notes(i);

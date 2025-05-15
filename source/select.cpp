@@ -322,31 +322,43 @@ void update_cursor(int knd) {
 	if (knd == KEY_UP) {
 		if (isSelectCourse == false) cursor++;
 		else if (course_cursor > 0) course_cursor--;
+		/*/ TR //
 		play_sound(SOUND_KATSU);
+		// TR /*/
 	}
 	else if (knd == (int)KEY_DOWN) {
 		if (isSelectCourse == false) cursor--;
 		else if (course_cursor < (course_count - 1)) course_cursor++;
+		/*/ TR //
 		play_sound(SOUND_KATSU);
+		// TR /*/
 	}
 	else if (knd == KEY_RIGHT) {
 		if (isSelectCourse == false) cursor -= 5;
+		/*/ TR //
 		play_sound(SOUND_KATSU);
+		// TR /*/
 	}
 	else if (knd == KEY_LEFT) {
 		if (isSelectCourse == false) cursor += 5;
+		/*/ TR //
 		play_sound(SOUND_KATSU);
+		// TR /*/
 	}
 	else if (knd == KEY_A && (course_count != 0 || isCursorGenre == true)) {
 		if (isCursorGenre == true) Genre[SelectedGenreId].isOpened = !Genre[SelectedGenreId].isOpened;
 		else if (isSelectCourse == true) isGameStart = true;
 		else isSelectCourse = true;
+		/*/ TR //
 		play_sound(SOUND_DON);
+		// TR /*/
 	}
 	else if (knd == KEY_B) {
 		isSelectCourse = false;
 		course_cursor = 0;
+		/*/ TR //
 		play_sound(SOUND_KATSU);
+		// TR /*/
 	}
 
 }
