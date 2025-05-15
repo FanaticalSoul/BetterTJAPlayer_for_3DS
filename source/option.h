@@ -190,6 +190,7 @@ enum Text_knd {
 int get_lang();
 void draw_option(u16 px, u16 py, unsigned int key , C2D_Sprite sprites[SPRITES_NUMER]);
 void toggle_auto();
+void toggle_sound();
 void get_option(OPTION_T *TMP);
 void init_option();
 void load_option(),exit_option(),save_option();

@@ -142,7 +142,8 @@ void draw_option(u16 px, u16 py, unsigned int key, C2D_Sprite sprites[SPRITES_NU
 		if ((y < py && y + height > py && x < px && x + width > px) && key & KEY_TOUCH) Option.isAuto = true;
 		XCnt = 0, YCnt++;
 
-		//はやさ
+		/*/ TR //
+		// Speed
 		x = XSense * XCnt, y = YSense * YCnt, XCnt++;
 		draw_option_text(x, y, Text[Option.lang][TEXT_SPEED], true, &width, &height);
 		x = XSense * XCnt + gap, y = YSense * YCnt, XCnt++;
@@ -158,6 +159,20 @@ void draw_option(u16 px, u16 py, unsigned int key, C2D_Sprite sprites[SPRITES_NU
 		draw_option_text(x, y, Text[Option.lang][TEXT_X4], Option.speed == 4.0, &width, &height);
 		if ((y < py && y + height > py && x < px && x + width > px) && key & KEY_TOUCH) Option.speed = 4.0;
 		XCnt = 0, YCnt++;
+		// TR /*/
+
+		//*/ TF //
+		// Sound
+		x = XSense * XCnt, y = YSense * YCnt, XCnt++;
+		draw_option_text(x, y, "Sound", true, &width, &height);
+		x = XSense * XCnt + gap, y = YSense * YCnt, XCnt++;
+		draw_option_text(x, y, Text[Option.lang][TEXT_OFF], Option.isSound == false, &width, &height);
+		if ((y < py && y + height > py && x < px && x + width > px) && key & KEY_TOUCH) Option.isSound = false;
+		x = XSense * XCnt + gap, y = YSense * YCnt, XCnt++;
+		draw_option_text(x, y, Text[Option.lang][TEXT_ON], Option.isSound == true, &width, &height);
+		if ((y < py && y + height > py && x < px && x + width > px) && key & KEY_TOUCH) Option.isSound = true;
+		XCnt = 0, YCnt++;
+		// TF /*/
 
 		//ステルス
 		x = XSense * XCnt, y = YSense * YCnt, XCnt++;
@@ -195,7 +210,7 @@ void draw_option(u16 px, u16 py, unsigned int key, C2D_Sprite sprites[SPRITES_NU
 		if ((y < py && y + height > py && x < px && x + width > px) && key & KEY_TOUCH) Option.random = 0.5;
 		XCnt = 0, YCnt++;
 
-		//言語
+		// Language
 		x = XSense * XCnt, y = YSense * YCnt, XCnt++;
 		draw_option_text(x, y, Text[Option.lang][TEXT_LANG], true, &width, &height);
 		x = XSense * XCnt + gap, y = YSense * YCnt, XCnt++;
@@ -472,15 +487,20 @@ void toggle_auto() {
 	Option.isAuto = !Option.isAuto;
 }
 
+void toggle_sound() {
+	Option.isSound = !Option.isSound;
+}
+
 void init_option() {
 
 	Option.isAuto = false;
+	Option.isSound = true;
 	Option.isStelth = false;
 	Option.dispFps = false;
 	Option.random = 0;
 	Option.speed = 1.0;
 	Option.isSwap = false;
-	Option.lang = LANG_JP;
+	Option.lang = LANG_EN; // start in english by default to make testing easy
 	Option.buffer_size = DEFAULT_BUFFER_SIZE;
 	Option.offset = 0;
 	Option.judge_range_perfect = DEFAULT_JUDGE_RANGE_PERFECT;
@@ -497,6 +517,7 @@ void save_option() {
 	json_object_set(json, "lang", json_integer(Option.lang));
 	json_object_set(json, "buffer_size", json_integer(Option.buffer_size));
 	json_object_set(json, "isAuto", json_boolean(Option.isAuto));
+	json_object_set(json, "isSound", json_boolean(Option.isSound));
 	json_object_set(json, "isStelth", json_boolean(Option.isStelth));
 	json_object_set(json, "isSwap", json_boolean(Option.isSwap));
 	json_object_set(json, "dispFps", json_boolean(Option.dispFps));
@@ -541,6 +562,7 @@ void load_option() {
 		Option.lang = json_integer_value(json_object_get(json, "lang"));
 		Option.buffer_size = json_integer_value(json_object_get(json, "buffer_size"));
 		Option.isAuto = json_boolean_value(json_object_get(json, "isAuto"));
+		Option.isSound = json_boolean_value(json_object_get(json, "isSound"));
 		Option.isStelth = json_boolean_value(json_object_get(json, "isStelth"));
 		Option.isSwap = json_boolean_value(json_object_get(json, "isSwap"));
 		Option.dispFps = json_boolean_value(json_object_get(json, "dispFps"));
@@ -588,6 +610,7 @@ void exit_option() {
 void get_option(OPTION_T *TMP) {
 
 	TMP->isAuto = Option.isAuto;
+	TMP->isSound = Option.isSound;
 	TMP->isStelth = Option.isStelth;
 	TMP->random = Option.random;
 	TMP->speed = Option.speed;
