@@ -291,14 +291,13 @@ int main() {
 
 				button_game(&isDon, &isKatsu, Option, key);
 			}
-			//*/ TF //
+			/*/ TF //
 			if (Option.isSound) {
 				if (isDon == true)   play_sound(SOUND_DON);			// Don
 				if (isKatsu == true) play_sound(SOUND_KATSU);		// Katsu
 			}
 			// TF /*/
 
-			}
 			if (key & KEY_SELECT || key & KEY_START) {
 				togglePlayback();
 				toggle_time(0);
